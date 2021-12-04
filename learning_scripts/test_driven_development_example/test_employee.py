@@ -15,9 +15,9 @@ class TestEmployeeComputePayout(unittest.TestCase):
         """Set up the test fixtures"""
         self.kevin = Employee(name=NAME, employee_id=EMPLOYEE_ID)
 
-    def test_employee_payout_returns_a_float(self):
-        """Whether payout returns a float"""
-        self.assertIsInstance(self.kevin.compute_payout(), float)
+    # def test_employee_payout_returns_a_float(self):
+    #     """Whether payout returns a float"""
+    #     self.assertIsInstance(self.kevin.compute_payout(), float)
 
     def test_employee_payout_no_commission_no_hours(self):
         """Tests whether payout is computed correctly with no comission and no hours"""
