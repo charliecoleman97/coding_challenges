@@ -137,9 +137,9 @@ class LinkedList:
         while cur:
             nxt = cur.next
             cur.next = prev
+            self.print_helper(nxt, "NXT")
             self.print_helper(prev, "PREV")
             self.print_helper(cur, "CUR")
-            self.print_helper(nxt, "NXT")
             self.print_helper(cur.next, "CUR.NEXT")
             prev = cur
             cur = nxt 
@@ -159,25 +159,94 @@ class LinkedList:
 
         self.head = _reverse_recursive(cur=self.head, prev=None)
 
+    def merge_sorted(self, llist):
+        p = self.head
+        q = llist.head
+        s = None
+        s = p
+        p = s.next
+        print(q)
+        print(p.data)
+        print(s.next)
+        if not p:
+            return q
+        if not q:
+            # return p
 
-llist = LinkedList()
-llist.append("A")
-llist.append("B")
-llist.append("C")
-llist.append("D")
+        # if p and q:
+        #     if p.data <= q.data:
+        #         s = p
+        #         p = s.next
+        #     else:
+        #         s = q
+        #         q = s.next
+        #     new_head = s 
+        # while p and q:
+        #     if p.data <= q.data:
+        #         s.next = p
+        #         s = p
+        #         p = s.next
+        #     else:
+        #         s.next = q
+        #         s = q
+        #         q = s.next
+        # if not p:
+        #     s.next = q
+        # if not q:
+        #     s.next = p
+        # return new_head
+
+
+
+# # Merge two sorted lists
+# llist1 = LinkedList()
+# llist2 = LinkedList()
+
+# llist1.append(1)
+# llist1.append(5)
+# llist1.append(7)
+# llist1.append(9)
+# llist1.append(10)
+
+# llist2.append(2)
+# llist2.append(3)
+# llist2.append(4)
+# llist2.append(6)
+# llist2.append(8)
+
+# llist1.print_list()
+# print("\n")
+# llist2.print_list()
+# llist3 = LinkedList()
+
+# llist1.merge_sorted(llist3)
+# llist1.print_list()
+
+
+
+
+
+
+
+
+# llist = LinkedList()
+# llist.append("A")
+# llist.append("B")
+# llist.append("C")
+# llist.append("D")
 # llist.insert_after_node(llist.head.next, "E")
-llist.delete_node("B")
+# llist.delete_node("B")
 # llist.print_list()
 
 # print(llist.len_iterative())
 # print(llist.len_recursive(llist.head))
 
 # Node swap data
-llist2 = LinkedList()
-llist2.append("A")
-llist2.append("B")
-llist2.append("C")
-llist2.append("D")
+# llist2 = LinkedList()
+# llist2.append("A")
+# llist2.append("B")
+# llist2.append("C")
+# llist2.append("D")
 
 # llist2.node_swap("A", "D")
 # llist2.print_list()
@@ -189,5 +258,5 @@ llist2.append("D")
 # A <- B <- C <- D <- 0
 
 # llist2.reverse_iterative()
-llist2.reverse_recursive()
-llist2.print_list()
+# llist2.reverse_recursive()
+# llist2.print_list()

@@ -15,13 +15,29 @@ Output: [1,2]
 '''
 import itertools
 
-# First way 
-def twoSum(nums: list[int], target: int)-> list[int]:
-    for i in range(0, len(nums)):
-        for j in range(i+1, len(nums)):
-            if nums[i] + nums[j] == target:
-                return (i,j)
+# # # First way 
+# def twoSum(nums: list[int], target: int)-> list[int]:
+#     for i in range(0, len(nums)):
+#         for j in range(i+1, len(nums)):
+#             if nums[i] + nums[j] == target:
+#                 return (i,j)
 
 
 
-print(twoSum([3,2,4], 6))
+# print(twoSum([3,2,4], 6))
+
+# Pincer Move
+def two_sum(nums, target):
+    i = 0
+    j = len(nums) -1
+    while i < j:
+        if nums[i] + nums[j] == target:
+            return (i, j)
+        elif nums[i] + nums[j] > target:
+            j -= 1
+        else:
+            i += 1
+            
+A1 = [3, 2, 4]
+
+print(two_sum(A1, 6))
