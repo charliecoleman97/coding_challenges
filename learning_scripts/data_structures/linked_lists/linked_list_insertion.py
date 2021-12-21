@@ -40,6 +40,8 @@ class LinkedList:
 
 
 
+
+
 llist = LinkedList()
 llist.append("A")
 llist.append("B")
