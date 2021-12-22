@@ -46,6 +46,8 @@ class LinkedList:
             cur_node = cur_node.next
         return True
 
+    
+
 
 
 llist1 = LinkedList()

@@ -64,7 +64,7 @@ class LinkedList:
         return p.data
         
 
-
+# Merged list
 llist = LinkedList()
 llist.append("A")
 llist.append("B")
@@ -72,5 +72,8 @@ llist.append("C")
 llist.append("D")
 # llist.print_list()
 
-print(llist.nth_to_last(2))
+# print(llist.nth_to_last(2))
+
+
+
         
