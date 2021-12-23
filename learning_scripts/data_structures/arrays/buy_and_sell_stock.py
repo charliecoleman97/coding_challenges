@@ -33,5 +33,6 @@ def stock(A):
 
 print(stock(A))
 
+
           
              
