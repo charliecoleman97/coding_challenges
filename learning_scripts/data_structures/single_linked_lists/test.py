@@ -6,13 +6,13 @@ class Node:
 class LinkedList:
     def __init__(self):
         self.head = None
-    
+
     def print_list(self):
         cur_node = self.head
         while cur_node:
             print(cur_node.data)
             cur_node = cur_node.next
-    
+        
     def append(self, data):
         new_node = Node(data)
         if self.head is None:
@@ -22,74 +22,61 @@ class LinkedList:
         while last_node.next:
             last_node = last_node.next
         last_node.next = new_node
-    
-    def delete_node(self, key):
-        cur_node = self.head
-        prev = None
 
-        if cur_node == self.head and cur_node.data == key:
+    def count_occurences(self):
+        cur_node = self.head
+        letter_count = dict()
+        while cur_node:
+            if cur_node.data in letter_count:
+                letter_count[cur_node.data] += 1
+            else:
+                letter_count[cur_node.data] = 1
+            cur_node = cur_node.next
+        return letter_count
+
+    def delete_node_at_pos(self, pos):
+        cur_node = self.head
+        if pos == 1:
             self.head = cur_node.next
             cur_node = None
-
-        while cur_node and cur_node.data != key:
+        prev = None
+        count = 1
+        while cur_node and count != pos:
             prev = cur_node
             cur_node = cur_node.next
-        
-        if not cur_node:
-            print("Specifed node not in list")
+            count += 1
+        if cur_node is None:
             return
-
+        
         prev.next = cur_node.next
         cur_node = None
 
     def is_palindrome(self):
-        s = ""
-        p = self.head
-        while p:
-            s += p.data
-            p = p.next
-        return s == s[::-1]
+        str = ""
+        cur_node = self.head
+        while cur_node:
+            str += cur_node.data
+            cur_node = cur_node.next
+        return str == str[::-1]
 
-    def rotate_list(self, key):
-        p = self.head
-        q = self.head
-        prev = None
-        count = 0
-
-        while p and count != key:
-            prev = p
-            p = p.next
-            count += 1
-        p = prev
         
-        while q:
-            prev = q
-            q = q.next
-        q = prev
 
-        q.next = self.head
-        self.head = p.next
-        p.next = None
+
+        
 
     
 
-
-
-
 llist = LinkedList()
-llist.append(2)
-llist.append(4)
-llist.append(6)
-llist.append(8)
-llist.append(10)
-llist.append(12)
-llist.append(14)
+llist.append("A")
+llist.append("B")
+llist.append("C")
+llist.append("D")
+llist.append("B")
+llist.append("A")
+llist.append("B")
+llist.append("C")
 
-print(llist.rotate_list(3))
 
 llist.print_list()
-
-
-
-
-
+# print(llist.count_occurences())
+print(llist.is_palindrome())
