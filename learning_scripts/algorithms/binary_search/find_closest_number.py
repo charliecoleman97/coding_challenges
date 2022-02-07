@@ -63,4 +63,14 @@ def find_closest_num(A, target):
         # Move the midpoint accordingly using binary search
         if A[mid] < target:
             low = mid + 1
-        elif 
+        elif A[mid] > target:
+            high = mid - 1
+        # If the target is the element itselft the closest 
+        # element is itself
+        else:
+            return A[mid]
+    return closest_num 
+
+
+y = find_closest_num(A2, 4)
+print(y)
